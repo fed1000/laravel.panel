@@ -14,7 +14,9 @@ service mysql restart
 https://skillbox.ru/media/code/galopom_po_python_yazykovoy_minimum_neobkhodimyy_nachinayushchemu_data_sayentistu/
 https://mintmem.com/page/xampp-for-linux-part2
 https://5balloons.info/how-to-install-laravel-5-5-with-xampp-on-linux/
-
+=========================
+gitignore
+====================
 .idea
 .vscode
 .vagrant
@@ -32,10 +34,31 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-
+-----------------------------
 
 composer require --dev barryvdh/laravel-ide-helper:2.6.7
 
+
+
+ошибка php
+не трогать ниже,
+
+//  https://intellect.icu/oshibka-laravel-php-fatal-error-uncaught-reflectionexception-class-config-does-not-exist-in-container-php-738-11693
+//  sudo chmod 775 storage -R
+//  sudo chmod 775 vendor -R
+//  sudo chmod 775 bootstrap -R
+
+// sudo chmod 755 -R laravel.panel
+// chmod -R o+w laravel.panel/storage
+--------------------------------
+composer.json
+,
+"post-update-cmd": [
+    "Illuminate\\Foundation\\ComposerScripts::postUpdate",
+   "php artisan ide-helper:generate",
+   "php artisan ide-helper:meta"
+]
+----------------------------------------
 php artisan ide-helper:generate
 
 php artisan route:clear
@@ -43,19 +66,3 @@ php artisan view:clear
 php artisan cache:clear
 php artisan config:clear
 php artisan config:cache
-
-ошибка php
-https://intellect.icu/oshibka-laravel-php-fatal-error-uncaught-reflectionexception-class-config-does-not-exist-in-container-php-738-11693
-sudo chmod 775 storage -R
-sudo chmod 775 vendor -R
-sudo chmod 775 bootstrap -R
-
- sudo chmod 755 -R laravel.panel
-chmod -R o+w laravel.panel/storage
-
-,
-"post-update-cmd": [
-    "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-   "php artisan ide-helper:generate",
-   "php artisan ide-helper:meta"
-]
