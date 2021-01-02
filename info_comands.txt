@@ -110,4 +110,24 @@ https://stackoverflow.com/questions/25329302/laravel-error-pdoexception-could-no
 https://stackoverflow.com/questions/25329302/laravel-error-pdoexception-could-not-find-driver-in-postgresql/25336292#25336292
  sudo apt-get install php7.4-mysql
 ИСПОЛЬЗУЕТСЯ ГЛОБАЛЬНЫЙ PHP 7.4 ИНТЕРПРЕТАТОР, а не ХAMPP
+5.Register and Autorize
+
+//add Contoller Home
+php artisan make:auth
+
+php artisan make:model Models/Role
+php artisan make:model Models/UserRole
+php artisan make:model Models/Admin/User
+
+CTRL+ALT+L добавить в User свойство Laravel fillable
+
+php artisan make:middleware CheckStatus
+
+php artisan make:controller Blog/BaseController
+php artisan make:controller Blog/Admin/AdminBaseController
+
+php artisan make:controller Blog/Admin/MainController
+
+
+
 
