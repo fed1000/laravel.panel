@@ -130,4 +130,27 @@ php artisan make:controller Blog/Admin/MainController
 
 
 
+---------------------
+6 lesson : AdminLTE
+php artisan make:controller Blog/User/MainController --resource
+php artisan make:controller Blog/Disabled/MainController --resource
 
+php artisan route:list
+
+yadi.sk/d/UT8C4R3MeVyCng
+
+
+composer require torann/laravel-meta-tags НЕ РАБОТАЕТ, ОШИБКА ВЕРСИЙ
+composer require torann/laravel-meta-tags:3.0.0 да нужно
+config/app.php: не нужно
+\Torann\LaravelMetaTags\MetaTagsServiceProvider::class,
+'MetaTag' => Torann\LaravelMetaTags\Facades\MetaTag::class,
+
+
+php artisan vendor:publish --provider="Torann\LaravelMetaTags\MetaTagsServiceProvider" не нужно
+
+composer require fomvasss/laravel-meta-tags
+
+     'MetaTag' =>Fomvass\LaravelMetaTags\Facade::class,
+
+php artisan vendor:publish --provider="Fomvasss\LaravelMetaTags\ServiceProvider"
