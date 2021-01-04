@@ -154,3 +154,12 @@ composer require fomvasss/laravel-meta-tags
      'MetaTag' =>Fomvass\LaravelMetaTags\Facade::class,
 
 php artisan vendor:publish --provider="Fomvasss\LaravelMetaTags\ServiceProvider"
+
+7 lesson 1
+
+yadi.sk/d/EJB0ZJjCTMeUdQ
+
+php artisan make:model Models/Admin/Product
+php artisan make:model Models/Admin/Order
+
+
