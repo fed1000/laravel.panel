@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Blog\Admin;
 
+use App\Http\Requests\AdminOrderSaveRequest;
 use App\Models\Admin\Order;
 use App\Repositories\Admin\MainRepository;
 use App\Repositories\Admin\OrderRepository;
@@ -126,6 +127,22 @@ class OrderController extends AdminBaseController
     public function update(Request $request, $id)
     {
         //
+    }
+
+    public function forcedestroy($id){
+      if(empty($id)){
+          return back()->withErrors(['msg' => 'Запись не найдена']);
+      }
+      $res = \DB::table('orders')
+          ->delete($id);
+      if ($res) {
+            return redirect()
+                ->route('blog.admin.orders.index', $id)
+                ->with(['success' => 'Успешно удалено']);
+      }else{
+            return back()
+                ->withErrors(['msg' => "Ошибка удаления"]);
+      }
     }
 
     /**

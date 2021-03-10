@@ -170,5 +170,21 @@ php artisan route:list
 8 lesson 3
 
 php artisan make:request AdminOrderSaveRequest
+php artisan make:model Models/Admin/Category
 
+13 chast 2
+php artisan make:controller Blog/Admin/CategoryController --resource
 
+composer require lavary/laravel-menu
+
+Lavary\Menu\ServiceProvider::class,
+
+'Menu' => Lavary\Menu\Facade::class,
+
+15 chast 4
+php artisan make:request BlogCategoryUpdateRequest
+
+php artisan make:observer AdminCategoryObserver --model=Models/Admin/Category
+php artisan make:request BlogCategoryUpdateRequest
+
+php artisan migrate:refresh --seed

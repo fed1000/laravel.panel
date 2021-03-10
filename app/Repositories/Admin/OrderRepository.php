@@ -82,4 +82,14 @@ class OrderRepository extends CoreRepository
         $result = $item->update();
         return $result;
     }
+
+    public function saveOrderComment($id){
+        $item = $this->getId($id);
+        if(!$item){
+            abort(404);
+        }
+        $item->note = !empty($_POST['comment']) ? $_POST['comment'] : null;
+        $result = $item->update();
+        return $result;
+    }
 }
