@@ -162,4 +162,13 @@ yadi.sk/d/EJB0ZJjCTMeUdQ
 php artisan make:model Models/Admin/Product
 php artisan make:model Models/Admin/Order
 
+8 lesson 1
+php artisan make:controller Blog/Admin/OrderController --resource
+
+php artisan route:list
+
+8 lesson 3
+
+php artisan make:request AdminOrderSaveRequest
+
 
